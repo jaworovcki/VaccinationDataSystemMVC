@@ -13,7 +13,7 @@ namespace VaccinationDataSystem.Sevices
             this.context = context;
         }
 
-        public async Task Create(Patient patient)
+        public async Task CreateAsync(Patient patient)
         {
             context.Patients.Add(patient);
             context.PatientProfiles.Add(patient.PatientProfile!);
