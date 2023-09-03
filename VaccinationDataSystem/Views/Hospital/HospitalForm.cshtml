@@ -1,0 +1,25 @@
+﻿@model VaccinationDataSystem.Models.Hospital
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Add Hospital</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<body>
+    <h3 class="bg-primary text-white text-center m-2 p-2">Hospital Addition Form</h3>
+    <form asp-action="HospitalAdditionForm" method="post" class="m-2">
+        <div class="form-group">
+            <label asp-for="Name">Hospital name:</label>
+            <input asp-for="Name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Location">Hospital Location:</label>
+            <input asp-for="Location" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</body>
+</html>

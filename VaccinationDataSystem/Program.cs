@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<VaccinationDataContext>(options => options.UseSqlServer(
 	builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+builder.Services.AddScoped<IHospitalsRepository, HospitalsRepository>();
 
 
 var app = builder.Build();
