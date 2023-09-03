@@ -31,7 +31,7 @@ namespace VaccinationDataSystem.Controllers
         public async Task<IActionResult> HospitalAdditionForm(Hospital hospital)
         {
             await repository.CreateHospitalAsync(hospital);
-            return View("HospitalForm", hospital);
+            return View("Thanks", hospital);
         }
     }
 }

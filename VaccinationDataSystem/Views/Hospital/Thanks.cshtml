@@ -1,0 +1,19 @@
+﻿@model VaccinationDataSystem.Models.Hospital
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<title>Thanks</title>
+</head>
+<body class="text-center">
+	<div>
+		<h1>Success! @Model.Name is successfully added!</h1>
+	</div>
+	Click <a asp-action="Index">here</a> to see other hospitals.
+</body>
+</html>
