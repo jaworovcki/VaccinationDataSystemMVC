@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VaccinationDataSystem.DataAccess;
+using VaccinationDataSystem.Models;
 
 namespace VaccinationDataSystem.Controllers
 {
@@ -11,6 +12,20 @@ namespace VaccinationDataSystem.Controllers
         {
 			this.context = context;
 		}
+
+		[HttpGet("register")]
+		public IActionResult GetRegisterForm()
+		{
+			return View("RegisterForm");
+		}
+
+		[HttpPost("register")]
+		public IActionResult PostRegisterForm(Patient patient)
+		{
+			return View("RegisterForm", patient);
+		}
+
+
 
     }
 }

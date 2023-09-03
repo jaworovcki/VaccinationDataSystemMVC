@@ -1,0 +1,47 @@
+﻿@model VaccinationDataSystem.Models.Patient
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Registration</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<body>
+    <h3 class="bg-primary text-white text-center m-2 p-2">Registration</h3>
+    <form>
+        <div>
+            <label asp-for="PatientProfile.Name">Your name:</label>
+            <input asp-for="PatientProfile.Name" />
+        </div>
+        <div>
+            <label asp-for="PatientProfile.Age">Your age:</label>
+            <input asp-for="PatientProfile.Age" />
+        </div>
+        <div>
+            <label asp-for="Phone">Your phone:</label>
+            <input asp-for="Phone"/>
+        </div>
+        <div>
+            <label asp-for="Email">Your email:</label>
+            <input asp-for="Email"/>
+        </div>
+        <div>
+            <label>Are you married?</label>
+            <select asp-for="VaccinationResponse.WillVaccine">
+                <option value="">Choose an option</option>
+                <option value="true">Married</option>
+                <option value="false">Not married</option>
+            </select>
+        </div>
+        <div>
+            <label>Do you want to get vaccinated?</label>
+            <select asp-for="VaccinationResponse.WillVaccine">
+                <option value="">Choose an option</option>
+                <option value="true">Yes,I am</option>
+                <option value="false">No, I don't</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html>
