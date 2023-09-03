@@ -21,6 +21,5 @@ namespace VaccinationDataSystem.Models
         public int HostHospitalId { get; set; }
 
         public PatientResponse? VaccinationResponse { get; set; }
-
     }
 }

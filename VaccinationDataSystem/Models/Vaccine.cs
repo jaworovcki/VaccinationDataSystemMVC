@@ -14,10 +14,10 @@ namespace VaccinationDataSystem.Models
         [MaxLength(150)]
         public string ProductionCountry { get; set; } = string.Empty;
 
-        [Column(TypeName="decima(2,5)")]
+        [Column(TypeName="decimal(5,2)")]
         public decimal Dosage { get; set; }
 
-		[Column(TypeName = "decima(2,5)")]
+		[Column(TypeName = "decimal(5,2)")]
 		public decimal PriceForUnit { get; set; }
 
         public List<Hospital> PlacesOfVaccination { get; set; } = new();

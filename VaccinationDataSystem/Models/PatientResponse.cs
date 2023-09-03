@@ -8,8 +8,9 @@
 
         public int PatientId { get; set; }
 
-        public bool? WillVaccine { get; set; }
+        public DateTime? DateOfVaccination { get; set; }
 
+        public bool? WillVaccine { get; set; }
     }
 
 }
