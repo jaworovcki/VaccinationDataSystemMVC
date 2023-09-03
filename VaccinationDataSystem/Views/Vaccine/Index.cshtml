@@ -1,0 +1,35 @@
+﻿@model IEnumerable<VaccinationDataSystem.Models.Vaccine>
+@{
+	ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hospitals</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+	<div class="text-center p-2">
+		<h2>Here is the list of vaccines!</h2>
+		<table class="table table-bordered table-striped table-sm">
+			<thead>
+				<tr><th>Name</th><th>ProductionCountry</th><th>Dosage</th><th>PriceForUnit</th><</tr>
+			</thead>
+			<tbody>
+				@foreach (var vaccine in Model)
+				{
+					<tr>
+						<td>@vaccine.Name</td>
+						<td>@vaccine.ProductionCountry</td>
+						<td>@vaccine.Dosage</td>
+						<td>@vaccine.PriceForUnit</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+		<a class="btn btn-primary" asp-controller="Vaccine" asp-action="HospitalAdditionForm">Create</a>
+	</div>
+</body>
+</html>
