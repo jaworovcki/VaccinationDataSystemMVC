@@ -7,16 +7,19 @@ namespace VaccinationDataSystem.Controllers
 {
     public class HospitalController : Controller
     {
-        private readonly IHospitalsRepository repository;
+        private readonly IHospitalsRepository hospitalRepository;
+        private readonly IVaccineRepository vaccineRepository;
 
-        public HospitalController( IHospitalsRepository repository)
+        public HospitalController( IHospitalsRepository hospitalRepository,
+            IVaccineRepository vaccineRepository)
         {
-            this.repository = repository;
+            this.hospitalRepository = hospitalRepository;
+            this.vaccineRepository = vaccineRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await repository.GetHospitalsAsync());
+            return View(await hospitalRepository.GetHospitalsAsync());
         }
 
         [HttpGet]
@@ -28,7 +31,8 @@ namespace VaccinationDataSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> HospitalAdditionForm(Hospital hospital)
         {
-            await repository.CreateHospitalAsync(hospital);
+            hospital.Vaccines = (List<Vaccine>)await vaccineRepository.GetVaccinesAsync();
+            await hospitalRepository.CreateHospitalAsync(hospital);
             return View("Thanks", hospital);
         }
     }

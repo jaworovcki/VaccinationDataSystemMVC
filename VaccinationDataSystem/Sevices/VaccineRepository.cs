@@ -33,6 +33,5 @@ namespace VaccinationDataSystem.Sevices
 			context.Vaccines.Remove(vaccine);
 			await context.SaveChangesAsync();
 		}
-
 	}
 }
