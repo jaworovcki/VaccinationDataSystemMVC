@@ -1,0 +1,40 @@
+﻿@using VaccinationDataSystem.DataAccess;
+@model VaccinationDataSystem.Models.Vaccine
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Add Hospital</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<body>
+    <h3 class="bg-primary text-white text-center m-2 p-2">Vaccine Addition Form</h3>
+    <form asp-action="VaccinesAdditionForm" method="post" class="m-2">
+        <div class="form-group">
+            <label asp-for="Name">Vaccine name:</label>
+            <input asp-for="Name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductionCountry">Production country:</label>
+            <input asp-for="ProductionCountry" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Dosage">Dosage:</label>
+            <input asp-for="Dosage" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PriceForUnit">Price for unit:</label>
+            <input asp-for="PriceForUnit" />
+        </div>
+        <div class="form-group">
+            <label>Select the hospitals</label>
+            <select asp-for="PlacesOfVaccination" class="multiselect-dropdown form-control" multiple>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</body>
+</html>

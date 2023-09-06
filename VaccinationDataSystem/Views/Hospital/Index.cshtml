@@ -15,7 +15,7 @@
 		<h2>Here is the list of hospitals!</h2>
 		<table class="table table-bordered table-striped table-sm">
 			<thead>
-				<tr><th>Name</th><th>Location</th><</tr>
+				<tr><th>Name</th><th>Location</th><th>Vaccines</th><</tr>
 			</thead>
 			<tbody>
 				@foreach (var hospital in Model)
@@ -23,6 +23,7 @@
 					<tr>
 						<td>@hospital.Name</td>
 						<td>@hospital.Location</td>
+						<td>@string.Join(",", hospital.Vaccines)</td>
 					</tr>
 				}
 			</tbody>

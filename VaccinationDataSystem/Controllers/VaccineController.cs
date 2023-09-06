@@ -20,6 +20,11 @@ namespace VaccinationDataSystem.Controllers
 			return View(await repository.GetVaccinesAsync());
 		}
 
+		public IActionResult VaccinesAdditionForm()
+		{
+			return View("VaccineForm");
+		}
+
 
     }
 }

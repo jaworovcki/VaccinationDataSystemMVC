@@ -20,7 +20,6 @@ namespace VaccinationDataSystem.Models
 		[Column(TypeName = "decimal(5,2)")]
 		public decimal PriceForUnit { get; set; }
 
-        public List<Hospital> PlacesOfVaccination { get; set; } = new();
-
+        public List<Hospital>? PlacesOfVaccination { get; set; } = new();
     }
 }
