@@ -25,7 +25,5 @@ namespace VaccinationDataSystem.Controllers
 			await repository.ImportVaccinesFromCSVAsync();
             return RedirectToAction("Index");
 		}
-
-
     }
 }

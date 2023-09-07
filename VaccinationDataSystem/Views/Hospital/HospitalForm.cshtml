@@ -19,6 +19,15 @@
             <label asp-for="Location">Hospital location:</label>
             <input asp-for="Location" />
         </div>
+        <div class="form-group">
+            <label>Select Vaccine:</label>
+            <select asp-for="@Model.Vaccines" class="form-control" multiple>
+                @foreach (var vaccine in Model.AvalableVaccines)
+                {
+                    <option value="@vaccine">@vaccine.Name</option>
+                }
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
 </body>

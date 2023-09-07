@@ -2,6 +2,7 @@
 using VaccinationDataSystem.DataAccess;
 using VaccinationDataSystem.Interfaces;
 using VaccinationDataSystem.Models;
+using VaccinationDataSystem.Sevices;
 
 namespace VaccinationDataSystem.Controllers
 {
@@ -23,9 +24,15 @@ namespace VaccinationDataSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult HospitalAdditionForm()
+        public async Task<IActionResult> HospitalAdditionForm()
         {
-            return View("HospitalForm");
+            var hospital = new Hospital();
+            hospital.AvalableVaccines = (List<Vaccine>)await vaccineRepository.GetVaccinesAsync();
+            if (!hospital.AvalableVaccines.Any())
+            {
+                throw new Exception("No vaccines in database");
+            }
+            return View("HospitalForm", hospital); 
         }
 
         [HttpPost]

@@ -8,15 +8,17 @@ namespace VaccinationDataSystem.Sevices
     public class HospitalsRepository : IHospitalsRepository
     {
         private readonly VaccinationDataContext context;
-        
-        public HospitalsRepository(VaccinationDataContext context)
+		private readonly IVaccineRepository _vaccineRepository;
+
+		public HospitalsRepository(VaccinationDataContext context, IVaccineRepository vaccineRepository)
         {
             this.context = context;
-        }
+			_vaccineRepository = vaccineRepository;
+		}
 
         public async Task CreateHospitalAsync(Hospital hospital)
         {
-            context.Hospitals.Add(hospital);
+			context.Hospitals.Add(hospital);
             await context.SaveChangesAsync();
         }
 
