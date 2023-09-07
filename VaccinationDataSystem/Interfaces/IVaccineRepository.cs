@@ -11,5 +11,8 @@ namespace VaccinationDataSystem.Interfaces
 		Task<Vaccine> GetVaccineByIdAsync(int id);
 
 		Task DeleteVaccineByIdAsync(int id);
-	}
+
+		Task ImportVaccinesFromCSVAsync();
+
+    }
 }

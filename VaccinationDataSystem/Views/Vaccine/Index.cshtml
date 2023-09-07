@@ -29,7 +29,9 @@
 				}
 			</tbody>
 		</table>
-		<a class="btn btn-primary" asp-controller="Vaccine" asp-action="HospitalAdditionForm">Create</a>
+		<form method="post" asp-controller="Vaccine" asp-action="ImportVaccinesFromCSV">
+			<button type="submit" class="btn btn-primary">Update</button>
+		</form>
 	</div>
 </body>
 </html>

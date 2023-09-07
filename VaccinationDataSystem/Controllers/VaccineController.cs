@@ -6,23 +6,24 @@ namespace VaccinationDataSystem.Controllers
 {
 	public class VaccineController : Controller
 	{
-		private readonly VaccinationDataContext context;
 		private readonly IVaccineRepository repository;
 
-		public VaccineController(VaccinationDataContext context, IVaccineRepository repository)
+		public VaccineController(IVaccineRepository repository)
         {
-			this.context = context;
 			this.repository = repository;
 		}
 
+		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			return View(await repository.GetVaccinesAsync());
 		}
 
-		public IActionResult VaccinesAdditionForm()
+		[HttpPost]
+		public async Task<IActionResult> ImportVaccinesFromCSV()
 		{
-			return View("VaccineForm");
+			await repository.ImportVaccinesFromCSVAsync();
+            return RedirectToAction("Index");
 		}
 
 

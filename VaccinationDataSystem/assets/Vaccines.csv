@@ -1,11 +1,11 @@
 Name,ProductionCountry,PriceForUnit,Dosage
-Moderna,USA,10.99,1 tablet
-AstraZeneca,Canada,8.49,2 tablets
-Pfizer,UK,12.99,1 capsule
-Jhonson&Jhonson,Germany,7.99,1 teaspoon
-CoronaVac,France,14.99,1 tablet
-Novavax,Japan,9.99,1 dropper
-Convidecia,Australia,11.49,1 tablet
-Janssen,Italy,13.79,1 capsule
-Sinopharm BIBP,Spain,6.99,1 tablet
-Sanofi–GSK,Brazil,15.99,2 tablets
+Moderna,USA,10.99,1
+AstraZeneca,Canada,8.49,2 
+Pfizer,UK,12.99,1
+Jhonson&Jhonson,Germany,7.99,1 
+CoronaVac,France,14.99,1 
+Novavax,Japan,9.99,1
+Convidecia,Australia,11.49,1 
+Janssen,Italy,13.79,1 
+Sinopharm BIBP,Spain,6.99,1
+Sanofi–GSK,Brazil,15.99,2
