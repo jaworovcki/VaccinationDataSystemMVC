@@ -21,10 +21,10 @@
         </div>
         <div class="form-group">
             <label>Select Vaccine:</label>
-            <select asp-for="Vaccines" class="form-control" multiple>
+            <select asp-for="SelectedVaccinesId" class="form-control" multiple>
                 @foreach (var vaccine in Model.AvalableVaccines)
                 {
-                    <option value="@vaccine">@vaccine.Name</option>
+                    <option value="@vaccine.Id">@vaccine.Name</option>
                 }
             </select>
         </div>

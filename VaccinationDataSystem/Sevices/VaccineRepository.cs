@@ -31,6 +31,16 @@ namespace VaccinationDataSystem.Sevices
 		public async Task<Vaccine> GetVaccineByIdAsync(int id) 
 			=> await context.Vaccines.SingleOrDefaultAsync(x => x.Id == id);
 
+		public async Task<IEnumerable<Vaccine>> GetVacciensByIdAsync(IEnumerable<int> ids)
+		{
+			var vaccines = new List<Vaccine>();
+            foreach (var id in ids)
+			{
+                vaccines.Add(await GetVaccineByIdAsync(id));
+            }
+            return vaccines;
+		}
+
 		public async Task DeleteVaccineByIdAsync(int id)
 		{
 			var vaccine = await GetVaccineByIdAsync(id);

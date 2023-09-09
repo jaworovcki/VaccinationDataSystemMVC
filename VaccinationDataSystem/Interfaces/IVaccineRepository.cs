@@ -14,5 +14,7 @@ namespace VaccinationDataSystem.Interfaces
 
 		Task ImportVaccinesFromCSVAsync();
 
+		Task<IEnumerable<Vaccine>> GetVacciensByIdAsync(IEnumerable<int> ids);
+
     }
 }
