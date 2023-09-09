@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label>Are you married?</label>
-            <select asp-for="VaccinationResponse.WillVaccine" class="form-control">
+            <select asp-for="PatientProfile.IsMarried" class="form-control">
                 <option value="">Choose an option</option>
                 <option value="true">Married</option>
                 <option value="false">Not married</option>
@@ -41,6 +41,15 @@
                 <option value="">Choose an option</option>
                 <option value="true">Yes,I am</option>
                 <option value="false">No, I don't</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Select your host hospital?</label>
+            <select asp-for="HostHospitalId" class="form-control">
+                @foreach (var hospital in Model.AvalaibleHospital)
+				{
+					<option value="@hospital.Id">@hospital.Name</option>
+				})
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>

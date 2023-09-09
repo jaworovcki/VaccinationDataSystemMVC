@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 
 namespace VaccinationDataSystem.Models
@@ -21,5 +22,8 @@ namespace VaccinationDataSystem.Models
         public int HostHospitalId { get; set; }
 
         public PatientResponse? VaccinationResponse { get; set; }
+
+		[NotMapped]
+		public List<Hospital> AvalaibleHospital { get; set; } = new();
     }
 }
