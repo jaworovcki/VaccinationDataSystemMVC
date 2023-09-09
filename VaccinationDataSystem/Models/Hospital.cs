@@ -19,7 +19,9 @@ namespace VaccinationDataSystem.Models
         [NotMapped]
         public List<Vaccine> AvalableVaccines { get; set; } = new();
 
-        public List<Vaccine> Vaccines { get; set; } = new();
+        [NotMapped]
+        public List<int> SelectedVaccinesId { get; set; } = new();
 
+        public List<Vaccine> Vaccines { get; set; } = new();
     }
 }

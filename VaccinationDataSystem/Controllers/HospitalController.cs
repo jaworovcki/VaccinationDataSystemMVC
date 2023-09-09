@@ -38,6 +38,7 @@ namespace VaccinationDataSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> HospitalAdditionForm(Hospital hospital)
         {
+            hospital.Vaccines = (List<Vaccine>)await vaccineRepository.GetVacciensByIdAsync(hospital.SelectedVaccinesId);
             await hospitalRepository.CreateHospitalAsync(hospital);
             return View("Thanks", hospital);
         }

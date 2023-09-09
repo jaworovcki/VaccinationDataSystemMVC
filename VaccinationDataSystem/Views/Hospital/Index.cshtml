@@ -23,7 +23,7 @@
 					<tr>
 						<td>@hospital.Name</td>
 						<td>@hospital.Location</td>
-						<td>@string.Join(",", hospital.Vaccines)</td>
+						<td>@string.Join(",", hospital.Vaccines.Select(v => v.Name))</td>
 					</tr>
 				}
 			</tbody>
