@@ -23,7 +23,10 @@ namespace VaccinationDataSystem.Sevices
         }
 
         public async Task<IList<Hospital>> GetHospitalsAsync() 
-            => await context.Hospitals.AsNoTracking().ToListAsync();
+            => await context.Hospitals.
+            Include(h => h.Vaccines).
+            AsNoTracking().
+            ToListAsync();
 
         public async Task<Hospital> GetHospitalByIdAsync(int id) 
             => await context.Hospitals.SingleOrDefaultAsync(h => h.Id == id);
