@@ -1,6 +1,6 @@
 ﻿@model VaccinationDataSystem.Models.Patient
 @{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -9,50 +9,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 <body>
-    <h3 class="bg-primary text-white text-center m-2 p-2">Registration</h3>
-    <form asp-action="PostRegisterForm" method="post" class="m-2">
-        <div class="form-group">
-            <label asp-for="PatientProfile.Name">Your name:</label>
-            <input asp-for="PatientProfile.Name" />
-        </div>
-        <div class="form-group">
-            <label asp-for="PatientProfile.Age">Your age:</label>
-            <input asp-for="PatientProfile.Age" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Phone">Your phone:</label>
-            <input asp-for="Phone"/>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email">Your email:</label>
-            <input asp-for="Email"/>
-        </div>
-        <div class="form-group">
-            <label>Are you married?</label>
-            <select asp-for="PatientProfile.IsMarried" class="form-control">
-                <option value="">Choose an option</option>
-                <option value="true">Married</option>
-                <option value="false">Not married</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Do you want to get vaccinated?</label>
-            <select asp-for="VaccinationResponse.WillVaccine" class="form-control">
-                <option value="">Choose an option</option>
-                <option value="true">Yes,I am</option>
-                <option value="false">No, I don't</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Select your host hospital?</label>
-            <select asp-for="HostHospitalId" class="form-control">
-                @foreach (var hospital in Model.AvalaibleHospital)
+	<h3 class="bg-primary text-white text-center m-2 p-2">Registration</h3>
+	<form asp-action="PostRegisterForm" method="post" class="m-2">
+		<div class="form-group">
+			<label asp-for="PatientProfile.Name">Your name:</label>
+			<input asp-for="PatientProfile.Name" />
+		</div>
+		<div class="form-group">
+			<label asp-for="PatientProfile.Age">Your age:</label>
+			<input asp-for="PatientProfile.Age" />
+		</div>
+		<div class="form-group">
+			<label asp-for="Phone">Your phone:</label>
+			<input asp-for="Phone" />
+		</div>
+		<div class="form-group">
+			<label asp-for="Email">Your email:</label>
+			<input asp-for="Email" />
+		</div>
+		<div class="form-group">
+			<label>Are you married?</label>
+			<select asp-for="PatientProfile.IsMarried" class="form-control">
+				<option value="">Choose an option</option>
+				<option value="true">Married</option>
+				<option value="false">Not married</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Do you want to get vaccinated?</label>
+			<select asp-for="VaccinationResponse.WillVaccine" class="form-control">
+				<option value="">Choose an option</option>
+				<option value="true">Yes,I am</option>
+				<option value="false">No, I don't</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Select your host hospital?</label>
+			<select asp-for="HostHospitalId" class="form-control">
+				@foreach (var hospital in Model.AvalaibleHospital)
 				{
 					<option value="@hospital.Id">@hospital.Name</option>
 				})
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
+			</select>
+		</div>
+		<div class="form-group">
+			<label asp-for="VaccinationResponse.DateOfVaccination">Choose the date:</label>
+			<input asp-for="VaccinationResponse.DateOfVaccination" type="date" />
+		</div>
+		<button type="submit" class="btn btn-primary">Register</button>
+	</form>
 </body>
 </html>

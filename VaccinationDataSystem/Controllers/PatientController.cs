@@ -35,8 +35,5 @@ namespace VaccinationDataSystem.Controllers
 			await repository.CreateAsync(patient);
 			return View("RegisterForm", patient);
 		}
-
-
-
     }
 }
