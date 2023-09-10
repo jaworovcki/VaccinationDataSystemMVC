@@ -33,7 +33,7 @@ namespace VaccinationDataSystem.Controllers
 		public async Task<IActionResult> PostRegisterForm(Patient patient)
 		{
 			await repository.CreateAsync(patient);
-			return View("RegisterForm", patient);
+			return View("Thanks", patient);
 		}
     }
 }
