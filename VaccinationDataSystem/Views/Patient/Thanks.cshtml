@@ -1,0 +1,20 @@
+﻿@model VaccinationDataSystem.Models.Patient
+@{
+	ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<title>Thanks</title>
+</head>
+<body class="text-center">
+	<div>
+		<h1>Success! @Model.PatientProfile.Name, you are successfully registred for vaccination on @Model.VaccinationResponse.DateOfVaccination.ToString()!</h1>
+	</div>
+	Click
+	<a asp-action="Index">here</a> to recieve the invitation on the email @Model.Email.
+</body>
+</html>
