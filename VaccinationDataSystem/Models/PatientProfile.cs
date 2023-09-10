@@ -10,6 +10,7 @@ namespace VaccinationDataSystem.Models
 		[MaxLength(150)]
 		public string Name { get; set; } = string.Empty;
 
+		[Range(16,100)]
 		public int Age { get; set; }
 
 		public bool? IsMarried { get; set; }

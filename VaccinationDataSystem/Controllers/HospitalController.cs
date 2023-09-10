@@ -38,6 +38,10 @@ namespace VaccinationDataSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> HospitalAdditionForm(Hospital hospital)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(HospitalAdditionForm));
+            }
             hospital.Vaccines = (List<Vaccine>)await vaccineRepository.GetVacciensByIdAsync(hospital.SelectedVaccinesId);
             await hospitalRepository.CreateHospitalAsync(hospital);
             return View("Thanks", hospital);
