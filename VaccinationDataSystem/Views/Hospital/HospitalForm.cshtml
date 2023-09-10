@@ -8,9 +8,11 @@
 <title>Add Hospital</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/style.css" />
 <body>
     <h3 class="bg-primary text-white text-center m-2 p-2">Hospital Addition Form</h3>
     <form asp-action="HospitalAdditionForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
         <div class="form-group">
             <label asp-for="Name">Hospital name:</label>
             <input asp-for="Name" />

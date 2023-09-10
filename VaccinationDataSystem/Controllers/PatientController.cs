@@ -32,6 +32,10 @@ namespace VaccinationDataSystem.Controllers
 		[HttpPost("register")]
 		public async Task<IActionResult> PostRegisterForm(Patient patient)
 		{
+			if (!ModelState.IsValid)
+			{
+				return View("RegisterForm", patient);
+			}
 			await repository.CreateAsync(patient);
 			return View("Thanks", patient);
 		}
